@@ -1,9 +1,15 @@
 var pixelProject = (function () {
 
   function testFunction(){
-    var testDiv= "<div>testtext</div>";
 
-    $('body').append(testDiv);
+    var testDiv = "<div class=\"pixelBox\">testtext</div>";
+    var testDiv2 = "<div class=\"colorBox\">testtext</div>";
+
+
+    $('.pixelGrid').append(testDiv);
+    $('#colors').append(testDiv2);
+
+
   };
 
   return {

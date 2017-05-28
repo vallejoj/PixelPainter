@@ -1,6 +1,32 @@
+.menu {
+  border: 5px solid black;
+  float: left;
+  height: 320px;
+  width: 160px;
+
+}
+
 .pixelPainter {
+  margin-left: 100px;
+  float: left;
+
   /* Perfectly square */
-  width: 80px;
+  width: 320px;
+  height: 320px;
+  border: 5px solid black;
+}
+
+.pixelBox {
+
   height: 80px;
- border:5px solid black;
+  width: 80px;
+  border: 5px solid black;
+
+}
+
+.colorBox {
+  height: 20px;
+  width: 20px;
+  border: 5px solid black;
+
 }
