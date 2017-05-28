@@ -1,30 +1,37 @@
-var pixelProject = (function () {
+var pixelProject = (function() {
 
-  var buildGrid = function(){
+  var buildGrid = function() {
 
     var cursor = 0;
 
-    for(var i = 0; i< 4; i++){
+    for (var i = 0; i < 4; i++) {
 
       var ourRowId = "row";
       ourRowId = ourRowId.concat(i);
-      var ourRow = "<div class=\"row\" id=\"" + ourRowId + "\">I'm new and this is my id.. " + ourRowId +" </div>";
+      var ourRow = "<div class=\"row\" id=\"" + ourRowId + "\"></div>";
       $('.pixelGrid').append(ourRow);
       ourRowId = "#".concat(ourRowId);
 
 
-      for(var j = 0; j < 4; j++){
+      for (var j = 0; j < 4; j++) {
         cursor++;
         console.log(ourRowId);
-        var ourDiv = "<div class=\"pixelBox\" id=\"" + cursor + "\">I'm new and this is my cursor.. " + cursor +" </div>";
+        var ourDiv = "<div class=\"pixelBox\" id=\"" + cursor + "\"> </div>";
         $(ourRowId).append(ourDiv);
-
+        ourCursorID = "#";
+        ourCursorID = ourCursorID.concat(cursor);
+        $(ourCursorID).click(insertColor());
       }
     }
 
+    function insertColor() {
+    
+    }
+
+
   };
 
-  function testFunction(){
+  function testFunction() {
 
     var testDiv = "<div class=\"pixelBox\">testtext</div>";
     var testDiv2 = "<div class=\"colorBox\">testtext</div>";
@@ -43,6 +50,6 @@ var pixelProject = (function () {
 
 });
 
-var myPixelProject= pixelProject();
+var myPixelProject = pixelProject();
 myPixelProject.build();
 //myPixelProject.test();

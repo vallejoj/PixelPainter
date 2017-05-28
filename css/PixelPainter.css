@@ -11,17 +11,16 @@
   float: left;
 
   /* Perfectly square */
-  width: 320px;
-  height: 320px;
+  width: 45vw;
+  height: 45vh;
   border: 5px solid black;
 }
 
 .pixelBox {
-
-  height: 80px;
-  width: 80px;
+  height: 10vh;
+  width: 10vw;
   border: 5px solid black;
-
+  float:left;
 }
 
 .colorBox {
