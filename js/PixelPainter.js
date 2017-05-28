@@ -3,7 +3,7 @@ var pixelProject = (function() {
   var j = 0;
   var dimension = 4;
   var color = "black";
-  var colorArray =[[],[],[],[],[]];
+  var colorArray =[];
 
   var buildColor = function(){
     var ourColorID = "";
@@ -26,38 +26,38 @@ var pixelProject = (function() {
     color = theColor;
   };
 var setColorSwatch= function(){
+for (var i = 0; i < 5; i++) {
+  var colorToPush= "rgb(244,";
+  colorToPush=colorToPush.concat(redOrange());
+  colorToPush=colorToPush.concat(",66)")
+  colorArray.push(colorToPush);
+}
+console.log(colorArray);
 
-  var redOrange= function(){
-
-    var min = Math.ciel(66);
-    var max= Math.floor(226);
-    return  Math.floor(Math.random()*(max-min+1))+min;
-
-  };
   var green= function(){
 
-    var min = Math.ciel(66);
+    var min = Math.ceil(66);
     var max= Math.floor(244);
     return  Math.floor(Math.random()*(max-min+1))+min;
 
   };
   var blue= function(){
 
-    var min = Math.ciel(83);
+    var min = Math.ceil(83);
     var max= Math.floor(232);
     return  Math.floor(Math.random()*(max-min+1))+min;
 
   };
   var purple= function(){
 
-    var min = Math.ciel(104);
+    var min = Math.ceil(104);
     var max= Math.floor(244);
     return  Math.floor(Math.random()*(max-min+1))+min;
 
   };
   var grey= function(){
 
-    var min = Math.ciel(20);
+    var min = Math.ceil(20);
     var max= Math.floor(244);
     return  Math.floor(Math.random()*(max-min+1))+min;
 
@@ -73,6 +73,14 @@ var setColorSwatch= function(){
         $(ourCursorID).css("background-color", "white");
       }
     }
+  };
+
+  var redOrange= function(){
+
+    var min = Math.ceil(66);
+    var max= Math.floor(226);
+    return  Math.floor(Math.random()*(max-min+1))+min;
+
   };
 
   // Build Grid Function
@@ -132,7 +140,8 @@ var setColorSwatch= function(){
     test: testFunction,
     build: buildGrid,
     clear: clearGrid,
-    color: buildColor
+    color: buildColor,
+    setColorSwatch:setColorSwatch,
   };
 
 
@@ -141,5 +150,6 @@ var setColorSwatch= function(){
 
 var myPixelProject = pixelProject();
 myPixelProject.build();
+myPixelProject.setColorSwatch();
 myPixelProject.color();
 //myPixelProject.test();
