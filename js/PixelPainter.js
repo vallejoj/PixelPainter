@@ -3,7 +3,7 @@ var pixelProject = (function() {
   var j = 0;
   var dimension = 4;
   var color = "black";
-  var colorArray = ['red', 'green', 'blue', 'black', 'fuchsia', 'lime'];
+  var colorArray =[[],[],[],[],[]];
 
   var buildColor = function(){
     var ourColorID = "";
@@ -23,11 +23,46 @@ var pixelProject = (function() {
 
   var setColor= function( theColor ){
 
-    console.log("im changing the color to.... " + theColor);
     color = theColor;
+  };
+var setColorSwatch= function(){
+
+  var redOrange= function(){
+
+    var min = Math.ciel(66);
+    var max= Math.floor(226);
+    return  Math.floor(Math.random()*(max-min+1))+min;
 
   };
+  var green= function(){
 
+    var min = Math.ciel(66);
+    var max= Math.floor(244);
+    return  Math.floor(Math.random()*(max-min+1))+min;
+
+  };
+  var blue= function(){
+
+    var min = Math.ciel(83);
+    var max= Math.floor(232);
+    return  Math.floor(Math.random()*(max-min+1))+min;
+
+  };
+  var purple= function(){
+
+    var min = Math.ciel(104);
+    var max= Math.floor(244);
+    return  Math.floor(Math.random()*(max-min+1))+min;
+
+  };
+  var grey= function(){
+
+    var min = Math.ciel(20);
+    var max= Math.floor(244);
+    return  Math.floor(Math.random()*(max-min+1))+min;
+
+  };
+}
   var clearGrid = function(){
     var cursor = 0;
     var ourCursorID = "";
