@@ -4,6 +4,19 @@ var pixelProject = (function() {
   var dimension = 4;
   var ourColor = "";
 
+var buildColor= function(){
+  var testColor="<div class=\"colorBox\" id=\"red\"> </div>";
+  $("#colors").append(testColor);
+
+  $("#testColor").click( function(){
+      setColor(this.id);
+});
+}
+var setColor= function(){
+   color=this.id;
+    $('#testColor').css("background-color", color);
+}
+
   var clearGrid = function(){
     var cursor = 0;
     var ourCursorID = "";
@@ -72,7 +85,8 @@ var pixelProject = (function() {
   return {
     test: testFunction,
     build: buildGrid,
-    clear: clearGrid
+    clear: clearGrid,
+    color: buildColor
   };
 
 
@@ -81,4 +95,5 @@ var pixelProject = (function() {
 
 var myPixelProject = pixelProject();
 myPixelProject.build();
+myPixelProject.color();
 //myPixelProject.test();
