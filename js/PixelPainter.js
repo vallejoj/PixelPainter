@@ -2,20 +2,31 @@ var pixelProject = (function() {
   var i = 0;
   var j = 0;
   var dimension = 4;
-  var ourColor = "";
+  var color = "black";
+  var colorArray = ['red', 'green', 'blue', 'black', 'fuchsia', 'lime'];
 
-var buildColor= function(){
-  var testColor="<div class=\"colorBox\" id=\"red\"> </div>";
-  $("#colors").append(testColor);
+  var buildColor = function(){
+    var ourColorID = "";
+    colorArray.forEach( function(color){
 
-  $("#testColor").click( function(){
-      setColor(this.id);
-});
-}
-var setColor= function(){
-   color=this.id;
-    $('#testColor').css("background-color", color);
-}
+      var testColor = "<div class=\"colorBox\" id=\""+ color + "\"> </div>";
+      $("#colors").append(testColor);
+
+      ourColorID = "#".concat(color);
+
+      $(ourColorID).css("background-color", color);
+      $(ourColorID).click( function(){
+          setColor(this.id);
+      });
+    });
+  };
+
+  var setColor= function( theColor ){
+
+    console.log("im changing the color to.... " + theColor);
+    color = theColor;
+
+  };
 
   var clearGrid = function(){
     var cursor = 0;
@@ -63,7 +74,7 @@ var setColor= function(){
       // Make it JQuery-able
       selector = "#".concat(selector);
 
-      $(selector).css("background-color", "black");
+      $(selector).css("background-color", color);
 
   }
 
