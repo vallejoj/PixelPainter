@@ -1,67 +1,44 @@
 var pixelProject = (function() {
-  var i = 0;
-  var j = 0;
-  var dimension = 4;
-  var color = "black";
+
+  var dimension = 20;
+  var color = "white";
   var colorArray =[];
 
   var buildColor = function(){
     var ourColorID = "";
     colorArray.forEach( function(color){
 
-      var testColor = "<div class=\"colorBox\" id=\""+ color + "\"> </div>";
+      var testColor = "<button class=\"colorBox\" id=\""+ color + "\"> </>";
       $("#colors").append(testColor);
 
       ourColorID = "#".concat(color);
 
       $(ourColorID).css("background-color", color);
-      $(ourColorID).click( function(){
+      $(ourColorID).mousedown(function(){
           setColor(this.id);
+
+})
+
       });
-    });
+
   };
 
   var setColor= function( theColor ){
-
     color = theColor;
   };
+
+
 var setColorSwatch= function(){
-for (var i = 0; i < 5; i++) {
-  var colorToPush= "rgb(244,";
-  colorToPush=colorToPush.concat(redOrange());
-  colorToPush=colorToPush.concat(",66)")
+for (var i = 0; i < 9; i++) {
+  for (var j = 0; j < 10; j++) {
+  var colorToPush= Math.floor(Math.random()*16777215).toString(16);
   colorArray.push(colorToPush);
 }
-console.log(colorArray);
+}
+}
+var eraseGrid= function(){
+    setColor('white')
 
-  var green= function(){
-
-    var min = Math.ceil(66);
-    var max= Math.floor(244);
-    return  Math.floor(Math.random()*(max-min+1))+min;
-
-  };
-  var blue= function(){
-
-    var min = Math.ceil(83);
-    var max= Math.floor(232);
-    return  Math.floor(Math.random()*(max-min+1))+min;
-
-  };
-  var purple= function(){
-
-    var min = Math.ceil(104);
-    var max= Math.floor(244);
-    return  Math.floor(Math.random()*(max-min+1))+min;
-
-  };
-  var grey= function(){
-
-    var min = Math.ceil(20);
-    var max= Math.floor(244);
-    return  Math.floor(Math.random()*(max-min+1))+min;
-
-  };
 }
   var clearGrid = function(){
     var cursor = 0;
@@ -70,17 +47,9 @@ console.log(colorArray);
       for(j = 0; j < dimension; j++){
         cursor++;
         ourCursorID = "#".concat(cursor);
-        $(ourCursorID).css("background-color", "white");
+        $(ourCursorID).css("background-color", "black");
       }
     }
-  };
-
-  var redOrange= function(){
-
-    var min = Math.ceil(66);
-    var max= Math.floor(226);
-    return  Math.floor(Math.random()*(max-min+1))+min;
-
   };
 
   // Build Grid Function
@@ -104,9 +73,11 @@ console.log(colorArray);
         $(ourRowId).append(ourDiv);
         ourCursorID = "#";
         ourCursorID = ourCursorID.concat(cursor);
-        $(ourCursorID).click(  function(){
+        $(ourCursorID).click( function(e){
+
             insertColor(this.id);
           });
+
       }
     }
   };
@@ -121,27 +92,16 @@ console.log(colorArray);
 
   }
 
-  // Test Function
-  function testFunction() {
-
-    var testDiv = "<div class=\"pixelBox\">testtext</div>";
-    var testDiv2 = "<div class=\"colorBox\">testtext</div>";
-
-
-    $('.pixelGrid').append(testDiv);
-    $('#colors').append(testDiv2);
-
-
-  }
 
 
   // Return Block
   return {
-    test: testFunction,
     build: buildGrid,
+    erase:eraseGrid,
     clear: clearGrid,
     color: buildColor,
     setColorSwatch:setColorSwatch,
+
   };
 
 

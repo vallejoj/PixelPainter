@@ -1,30 +1,75 @@
+html{
+  background: url("http://pa1.narvii.com/6193/2a19dea12d9bd75e2b93d8747b9b34d710de4d84_hq.gif") no-repeat center center fixed;
+  background-size:cover;
+}
+body{
+display: flex;
+  font-family: dameron;
+  color: #f442f1;
+   text-shadow: 2px 2px white;
+
+align-items: stretch;
+}
+h1{
+  text-align: center;
+}
+button{
+    font-family: dameron;
+    width: 60px;
+}
 .menu {
-  border: 5px solid black;
+  display: flex;
   float: left;
   height: 320px;
   width: 160px;
+  flex-direction: column;
 
 }
 
 .pixelPainter {
+display:flex;
   margin-left: 100px;
   float: left;
 
   /* Perfectly square */
-  width: 45vw;
-  height: 45vh;
-}
+  width: 64vw;
+  height: 20vh;
 
+
+}
+.pixelGrid{
+  position: relative;
+  justify-content: center;
+  margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  vertical-align:middle;
+  padding-top:100px;
+
+}
 .pixelBox {
-  height: 10vh;
-  width: 10vw;
-  border: 5px solid black;
+display: flex;
+  height: 20px;
+  width: 20px;
+
   float:left;
+  background-color: black;
+    flex-direction: column;
+  border: .5px solid #00c7ff;
+justify-content: center;
+
 }
 
 .colorBox {
-  height: 20px;
-  width: 20px;
-  border: 5px solid black;
+  height: 25px;
+  width: 25px;
+  border: .5px solid #00c7ff;
+  float:left;
+
+}
+.previewBox{
+  height: 60px;
+  width: 60px;
+  border: 2px solid black;
 
 }
