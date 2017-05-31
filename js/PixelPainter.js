@@ -1,7 +1,7 @@
 var pixelProject = (function() {
 
   var dimension = 20;
-  var color = "white";
+  var color = "black";
   var colorArray =[];
 
   var buildColor = function(){
@@ -26,7 +26,9 @@ var pixelProject = (function() {
   var setColor= function( theColor ){
     color = theColor;
   };
+var save= function(){
 
+}
 
 var setColorSwatch= function(){
 for (var i = 0; i < 9; i++) {
@@ -37,7 +39,7 @@ for (var i = 0; i < 9; i++) {
 }
 }
 var eraseGrid= function(){
-    setColor('white')
+    setColor('black')
 
 }
   var clearGrid = function(){
@@ -74,7 +76,6 @@ var eraseGrid= function(){
         ourCursorID = "#";
         ourCursorID = ourCursorID.concat(cursor);
         $(ourCursorID).click( function(e){
-
             insertColor(this.id);
           });
 
