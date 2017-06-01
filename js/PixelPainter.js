@@ -38,6 +38,7 @@ for (var i = 0; i < 9; i++) {
 }
 }
 }
+
 var eraseGrid= function(){
     setColor('black')
 
@@ -56,7 +57,7 @@ var eraseGrid= function(){
 
   // Build Grid Function
   var buildGrid = function() {
-
+ var mousedown=false;
     var cursor = 0;
 
     for (i = 0; i < dimension; i++) {
@@ -75,9 +76,22 @@ var eraseGrid= function(){
         $(ourRowId).append(ourDiv);
         ourCursorID = "#";
         ourCursorID = ourCursorID.concat(cursor);
-        $(ourCursorID).click( function(e){
-            insertColor(this.id);
-          });
+        $(ourCursorID).on( 'mouseover',function(){
+          if (mousedown) {
+              insertColor(this.id);
+
+          }
+
+        });
+        $(ourCursorID).on( 'mousedown',function(){
+          mousedown=true;
+        insertColor(this.id);
+
+        });
+        $(ourCursorID).on( 'mouseup',function(){
+          mousedown=false;
+        });
+
 
       }
     }
