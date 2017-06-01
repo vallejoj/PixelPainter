@@ -1,5 +1,6 @@
 
 body{
+
 display: flex;
   font-family: dameron;
   color: #f442f1;
@@ -19,20 +20,27 @@ html{
   background: url("http://pa1.narvii.com/6193/2a19dea12d9bd75e2b93d8747b9b34d710de4d84_hq.gif") no-repeat center center fixed;
   background-size:cover;
 }
+
+.title-bar{
+  position: fixed;
+  height: 100px;
+  width: 95vw;
+}
+
 @media screen and (max-width:716px){
 .menu{
   display:none;
 }
 .pixelBox {
 
-display: flex;
+  display: flex;
   height: 20px;
   width: 20px;
   float:left;
   background-color: black;
-    flex-direction: column;
+  flex-direction: column;
   border: .5px solid #00c7ff;
-justify-content: center;
+  justify-content: center;
 
 }
 
@@ -42,60 +50,59 @@ justify-content: center;
 
 
   .menu{
-  display: flex;
-  float: left;
-  height: 320px;
-  width: 160px;
-  flex-direction: column;
-}
+    margin-top: 200px;
+    display: flex;
+    float: left;
+    height: 320px;
+    width: 160px;
+    flex-direction: column;
+  }
 
-.pixelPainter {
-display:flex;
-  margin-left: 100px;
-  float: left;
+  .pixelPainter {
+    margin-top: 100px;
+    display:flex;
+    margin-left: 100px;
+    float: left;
 
-  /* Perfectly square */
-  width: 64vw;
-  height: 20vh;
+    /* Perfectly square */
+    width: 64vw;
+    height: 20vh;
+  }
 
-
-}
 .pixelGrid{
-
-  max-width:
 
   justify-content: center;
   margin-left: auto;
-    margin-right: auto;
-    align-items: center;
+  margin-right: auto;
+  align-items: center;
   vertical-align:middle;
   padding-top:100px;
 
 }
-.pixelBox {
+  .pixelBox {
 
-display: flex;
+  display: flex;
   height: 20px;
   width: 20px;
   float:left;
   background-color: black;
-    flex-direction: column;
+  flex-direction: column;
   border: .5px solid #00c7ff;
-justify-content: center;
+  justify-content: center;
 
-}
+  }
 
-.colorBox {
-  height: 25px;
-  width: 25px;
-  border: .5px solid #00c7ff;
-  float:left;
+  .colorBox {
+    height: 25px;
+    width: 25px;
+    border: .5px solid #00c7ff;
+    float:left;
 
-}
-.previewBox{
-  height: 60px;
-  width: 60px;
-  border: 2px solid black;
+  }
+  .previewBox{
+    height: 60px;
+    width: 60px;
+    border: 2px solid black;
 
-}
+  }
 }

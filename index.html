@@ -2,19 +2,24 @@
 
 <head>
   <link href="css/PixelPainter.css" rel="stylesheet" media="screen" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <title>Clark and Josh's Excellent Pixel Painter</title>
 </head>
 
+ <div class="title-bar">
+    <h1>Pixel Painter: The Saga Of Sand And DOM</h1>
+    <div class="portfolio-holder">
+      <button style="align-content: center;">Josh's Portfolio</button>
+      <button>Clark's Portfolio</button>
+    </div>
+  </div>
+
 <body>
 
-  <div class='container'>
 
-  <div id="pixelPainter"></div>
-
-</div>
 
   <div class="menu">
-  <h1>Pixel Painter</h1>
+
     <div id="colors"> </div>
 
 
@@ -22,12 +27,15 @@
   <button onclick="myPixelProject.clear()">Clear</button>
 
   </div>
+
   <div class="pixelPainter">
 
     <div class="pixelGrid">
 
     </div>
   </div>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/PixelPainter.js"></script>
 
