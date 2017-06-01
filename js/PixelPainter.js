@@ -2,52 +2,55 @@ var pixelProject = (function() {
 
   var dimension = 20;
   var color = "black";
-  var colorArray =[];
+  var colorArray = [];
 
-  var buildColor = function(){
+  var buildColor = function() {
     var ourColorID = "";
-    colorArray.forEach( function(color){
+    colorArray.forEach(function(color) {
 
-      var testColor = "<button class=\"colorBox\" id=\""+ color + "\"> </>";
+      var testColor = "<button class=\"colorBox\" id=\"" + color + "\"> </>";
       $("#colors").append(testColor);
 
       ourColorID = "#".concat(color);
 
       $(ourColorID).css("background-color", color);
-      $(ourColorID).mousedown(function(){
-          setColor(this.id);
+      $(ourColorID).mousedown(function() {
+        setColor(this.id);
 
-})
+      })
 
-      });
+    });
 
   };
 
-  var setColor= function( theColor ){
+  var setColor = function(theColor) {
     color = theColor;
+    var previewBox= document.getElementById('myPreviewBox');
+    previewBox.style.backgroundColor=theColor;
   };
-var save= function(){
 
-}
 
-var setColorSwatch= function(){
-for (var i = 0; i < 9; i++) {
-  for (var j = 0; j < 10; j++) {
-  var colorToPush= Math.floor(Math.random()*16777215).toString(16);
-  colorArray.push(colorToPush);
-}
-}
-}
+  var setColorSwatch = function() {
+    for (var i = 0; i < 9; i++) {
+      for (var j = 0; j < 10; j++) {
+        var colorToPush = Math.floor(Math.random() * 16777215).toString(16);
+        colorArray.push(colorToPush);
+      }
+    }
+  }
 
-var eraseGrid= function(){
+  var eraseGrid = function() {
     setColor('black')
 
-}
-  var clearGrid = function(){
+  }
+
+
+
+  var clearGrid = function() {
     var cursor = 0;
     var ourCursorID = "";
-    for(i = 0; i < dimension; i++){
-      for(j = 0; j < dimension; j++){
+    for (i = 0; i < dimension; i++) {
+      for (j = 0; j < dimension; j++) {
         cursor++;
         ourCursorID = "#".concat(cursor);
         $(ourCursorID).css("background-color", "black");
@@ -57,7 +60,7 @@ var eraseGrid= function(){
 
   // Build Grid Function
   var buildGrid = function() {
- var mousedown=false;
+    var mousedown = false;
     var cursor = 0;
 
     for (i = 0; i < dimension; i++) {
@@ -76,20 +79,19 @@ var eraseGrid= function(){
         $(ourRowId).append(ourDiv);
         ourCursorID = "#";
         ourCursorID = ourCursorID.concat(cursor);
-        $(ourCursorID).on( 'mouseover',function(){
+        $(ourCursorID).on('mouseover', function() {
           if (mousedown) {
-              insertColor(this.id);
+            insertColor(this.id);
 
           }
+        });
+        $(ourCursorID).on('mousedown', function() {
+          mousedown = true;
+          insertColor(this.id);
 
         });
-        $(ourCursorID).on( 'mousedown',function(){
-          mousedown=true;
-        insertColor(this.id);
-
-        });
-        $(ourCursorID).on( 'mouseup',function(){
-          mousedown=false;
+        $(ourCursorID).on('mouseup', function() {
+          mousedown = false;
         });
 
 
@@ -100,10 +102,10 @@ var eraseGrid= function(){
 
   // Insert Color
   function insertColor(selector) {
-      // Make it JQuery-able
-      selector = "#".concat(selector);
+    // Make it JQuery-able
+    selector = "#".concat(selector);
 
-      $(selector).css("background-color", color);
+    $(selector).css("background-color", color);
 
   }
 
@@ -112,10 +114,10 @@ var eraseGrid= function(){
   // Return Block
   return {
     build: buildGrid,
-    erase:eraseGrid,
+    erase: eraseGrid,
     clear: clearGrid,
     color: buildColor,
-    setColorSwatch:setColorSwatch,
+    setColorSwatch: setColorSwatch,
 
   };
 

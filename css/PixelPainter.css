@@ -16,6 +16,7 @@ h1{
 button{
     font-family: dameron;
     width: 60px;
+
 }
 html{
   background: url("http://pa1.narvii.com/6193/2a19dea12d9bd75e2b93d8747b9b34d710de4d84_hq.gif") no-repeat center center fixed;
@@ -140,7 +141,15 @@ box-sizing: border-box;
     width: 25px;
     border: .5px solid #00c7ff;
     float:left;
+    display: block;
 
+  }
+#myPreviewBox{
+    height: 100%;
+    width: 50px;
+      border: .5px solid #00c7ff;
+      float: left;
+      position: relative;
   }
 
 }
