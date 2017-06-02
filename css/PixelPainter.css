@@ -1,155 +1,127 @@
- @font-face { font-family: 'dameron';
-   src: url('/css/dameron/dameron.ttf'); }
-body{
+ @font-face {
+   font-family: 'dameron';
+   src: url('/css/dameron/dameron.ttf');
+ }
 
-display: flex;
-  font-family: dameron;
-  color: #f442f1;
+ body {
+   display: flex;
+   font-family: dameron;
+   color: #f442f1;
    text-shadow: 2px 2px white;
+   align-items: stretch;
+ }
 
-align-items: stretch;
-}
-h1{
-  text-align: center;
-  font-size:40px;
-}
-button{
-    font-family: dameron;
-    width: 60px;
+ h1 {
+   text-align: center;
+   font-size: 40px;
+ }
 
-}
-html{
-  background: url("http://pa1.narvii.com/6193/2a19dea12d9bd75e2b93d8747b9b34d710de4d84_hq.gif") no-repeat center center fixed;
-  background-size:cover;
-}
+ button {
+   font-family: dameron;
+   width: 60px;
+ }
 
-.title-bar {
-  position: fixed;
-  height: 100px;
-  width: 95vw;
-}
+ html {
+   background: url("http://pa1.narvii.com/6193/2a19dea12d9bd75e2b93d8747b9b34d710de4d84_hq.gif") no-repeat center center fixed;
+   background-size: cover;
+ }
 
-.portfolio-holder {
+ .title-bar {
+   position: fixed;
+   height: 100px;
+   width: 95vw;
+ }
 
-}
+ .portfolio-holder {}
 
-@media screen and (max-width:716px){
+ @media screen and (max-width:716px) {
+   .pixelGrid {
+     justify-content: center;
+     margin-left: auto;
+     margin-right: auto;
+     align-items: center;
+     vertical-align: middle;
+     padding-top: 100px;
+     box-sizing: border-box;
+   }
+   .pixelBox {
+     height: 15px;
+     width: 15px;
+     float: left;
+     background-color: black;
+     flex-direction: column;
+     border: .5px solid #00c7ff;
+     box-sizing: border-box;
+   }
+   .pixelPainter {
+     margin-top: 100px;
+     display: flex;
+     margin-left: 100px;
+     float: left;
+     /* Perfectly square */
+     width: 64vw;
+     height: 20vh;
+   }
+   .menu {
+     width: 50px;
+     margin-top: 200px;
+   }
+   .colorBox {
+     height: 10px;
+     width: 10px;
+     border: .5px solid #00c7ff;
+     float: left;
+   }
+ }
 
-
-  .pixelGrid {
-
-
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    vertical-align: middle;
-    padding-top: 100px;
-box-sizing: border-box;
-
-  }
-
-  .pixelBox {
-    height: 15px;
-    width: 15px;
-    float:left;
-    background-color: black;
-    flex-direction: column;
-    border: .5px solid #00c7ff;
-box-sizing: border-box;
-
-
-  }
-
-
-
-  .pixelPainter {
-    margin-top: 100px;
-    display:flex;
-    margin-left: 100px;
-    float: left;
-
-    /* Perfectly square */
-    width: 64vw;
-    height: 20vh;
-
-
-
-  }
-    .menu{
-      width:50px;
-      margin-top: 200px;
-    }
-  .colorBox {
-    height: 10px;
-    width: 10px;
-    border: .5px solid #00c7ff;
-    float:left;
-
-  }
-
-}
-
-@media screen and (min-width:717px){
-
-
-  .menu{
-    margin-top: 200px;
-    display: flex;
-    float: left;
-    height: 320px;
-    width: 160px;
-    flex-direction: column;
-  }
-
-  .pixelPainter {
-    margin-top: 100px;
-    display:flex;
-    margin-left: 100px;
-    float: left;
-
-    /* Perfectly square */
-    width: 64vw;
-    height: 20vh;
-  }
-
-.pixelGrid{
-
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
-  vertical-align: middle;
-  padding-top: 100px;
-
-}
-  .pixelBox {
-
-  display: flex;
-  height: 20px;
-  width: 20px;
-  float: left;
-  background-color: black;
-  flex-direction: column;
-  border: .5px solid #00c7ff;
-  justify-content: center;
-
-  }
-
-  .colorBox {
-    height: 25px;
-    width: 25px;
-    border: .5px solid #00c7ff;
-    float:left;
-    display: block;
-
-  }
-#myPreviewBox{
-    height: 100%;
-    width: 50px;
-      border: .5px solid #00c7ff;
-      float: left;
-      position: relative;
-  }
-
-}
+ @media screen and (min-width:717px) {
+   .menu {
+     margin-top: 200px;
+     display: flex;
+     float: left;
+     height: 320px;
+     width: 160px;
+     flex-direction: column;
+   }
+   .pixelPainter {
+     margin-top: 100px;
+     display: flex;
+     margin-left: 100px;
+     float: left;
+     /* Perfectly square */
+     width: 64vw;
+     height: 20vh;
+   }
+   .pixelGrid {
+     justify-content: center;
+     margin-left: auto;
+     margin-right: auto;
+     align-items: center;
+     vertical-align: middle;
+     padding-top: 100px;
+   }
+   .pixelBox {
+     display: flex;
+     height: 20px;
+     width: 20px;
+     float: left;
+     background-color: black;
+     flex-direction: column;
+     border: .5px solid #00c7ff;
+     justify-content: center;
+   }
+   .colorBox {
+     height: 25px;
+     width: 25px;
+     border: .5px solid #00c7ff;
+     float: left;
+     display: block;
+   }
+   #myPreviewBox {
+     height: 100%;
+     width: 50px;
+     border: .5px solid #00c7ff;
+     float: left;
+     position: relative;
+   }
+ }

@@ -25,8 +25,8 @@ var pixelProject = (function() {
 
   var setColor = function(theColor) {
     color = theColor;
-    var previewBox= document.getElementById('myPreviewBox');
-    previewBox.style.backgroundColor=theColor;
+    var previewBox = document.getElementById('myPreviewBox');
+    previewBox.style.backgroundColor = theColor;
   };
 
 
